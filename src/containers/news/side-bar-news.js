@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import { Tabs, Tab } from 'react-bootstrap'
 
-import ArticleListContainer from '../article-list'
-import { Link } from 'react-router-dom'
 import SideBarTopNewsContainer from '../side-bar-top-news-list'
 import SideBarFeaturedNewsContainer from '../side-bar-featured-news-list'
 

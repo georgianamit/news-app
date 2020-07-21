@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import config from './config'
 import Header from './containers/header'
 import NotFound from './components/layout/not-found'
 import LatestNews from './containers/news/latest-news'
@@ -16,6 +15,7 @@ import ScienceNews from './containers/news/science-news'
 import SportsNews from './containers/news/sports-news'
 import TechnologyNews from './containers/news/technology-news'
 import SideBarNews from './containers/news/side-bar-news'
+import SearchNews from './containers/news/search-news'
 
 class App extends Component {
   componentDidMount() {
@@ -26,7 +26,7 @@ class App extends Component {
       <div className="app">
         <Provider store={store}>
           <Router>
-            <Header items={config.header.nav} />
+            <Route path="/" component={Header} />
             <LatestNews />
             <div class="container">
               <div class="row">
@@ -39,6 +39,7 @@ class App extends Component {
                     <Route path="/science" exact component={ScienceNews} />
                     <Route path="/sports" exact component={SportsNews} />
                     <Route path="/technology" exact component={TechnologyNews} />
+                    <Route path="/:q" exact component={SearchNews} />
                     <Route path="*" component={NotFound} />
                   </Switch>
                 </div>

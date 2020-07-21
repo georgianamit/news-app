@@ -13,11 +13,11 @@ const defaultProps = {
 
 class Header extends Component {
   render() {
-    const { items } = this.props
+    const { items, handleChange } = this.props
     return (
       <header>
         <BrandHeader />
-        <HeaderNav items={items} />
+        <HeaderNav items={items} handleChange={handleChange} />
       </header>
     )
   }

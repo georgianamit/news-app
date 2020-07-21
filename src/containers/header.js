@@ -1,19 +1,19 @@
-import React from 'react'
-import { connect } from 'react-redux'
-
+import React, { useEffect, useState } from 'react'
+import config from '../config'
 import Header from '../components/layout/header/'
-import { enableHeaderSticky, disableHeaderSticky } from '../store/actions'
 
-const HeaderContaine = (props) => <Header {...props} />
-
-const mapStateToProps = (state) => {
-  const { header } = state
-  return {
-    isSticky: header.isSticky,
+const HeaderContainer = (props) => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const { history } = props
+  const handleChange = (e) => {
+    e.preventDefault()
+    setSearchTerm(e.target.value)
   }
+  useEffect(() => {
+    history.push(`/${searchTerm}`)
+  }, [searchTerm])
+
+  return <Header {...props} handleChange={handleChange} items={config.header.nav} />
 }
 
-export default connect(mapStateToProps, {
-  enableHeaderSticky,
-  disableHeaderSticky,
-})(HeaderContaine)
+export default HeaderContainer

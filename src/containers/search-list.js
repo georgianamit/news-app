@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import ArticleList from '../components/articles/article-list'
-import { fetchArticles } from '../store/actions/articles-actions'
+import { fetchSearchNews } from '../store/actions/search-news-actions'
 
 // class ArticleListContainer extends React.Component {
 //   componentDidMount() {
@@ -15,25 +15,25 @@ import { fetchArticles } from '../store/actions/articles-actions'
 //   }
 // }
 
-const ArticleListContainer = (props) => {
-  const { category, fetchArticles } = props
+const SearchListContainer = (props) => {
+  const { fetchSearchNews, match } = props
   useEffect(() => {
-    fetchArticles(category)
-  }, [category])
+    fetchSearchNews(match.params)
+  }, [match.params])
   return <ArticleList {...props} />
 }
 
 const mapStateToProps = (state) => {
-  const { articles } = state
+  const { searchNews } = state
   return {
-    items: articles.items,
-    isFetching: articles.isFetching,
-    nextPage: articles.nextPage,
+    items: searchNews.items,
+    isFetching: searchNews.isFetching,
+    nextPage: searchNews.nextPage,
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchArticles: (category) => dispatch(fetchArticles(category)),
+  fetchSearchNews: (searchTerm) => dispatch(fetchSearchNews(searchTerm)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleListContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchListContainer)
