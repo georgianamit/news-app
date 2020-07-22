@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
+  description: PropTypes.string,
   content: PropTypes.string,
-  link: PropTypes.string,
-  imageLink: PropTypes.string,
-  tag: PropTypes.string,
-  time: PropTypes.string,
+  url: PropTypes.string,
+  urlToImage: PropTypes.string,
+  publishedAt: PropTypes.string,
+  author: PropTypes.string,
 }
 
 const defaultProps = {}
 
-const ArticleListItem = ({ id, title, description, content, url, urlToImage, tag, publishedAt, author }) => (
+const ArticleListItem = ({ id, title, description, content, url, urlToImage, publishedAt, author }) => (
   <div className="card mb-4">
     <div className="row no-gutters">
       <div className="col-4">
@@ -23,9 +25,7 @@ const ArticleListItem = ({ id, title, description, content, url, urlToImage, tag
         <div className="card-block px-2">
           <h4 className="card-title">{title}</h4>
           <p className="card-text">{description}</p>
-          <a href="#" class="btn btn-primary">
-            more..
-          </a>
+          {/* <Link class="btn btn-primary">more..</Link> */}
         </div>
       </div>
     </div>

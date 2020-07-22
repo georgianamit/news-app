@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-// import InfiniteScroll from 'redux-infinite-scroll'
 
 import NewsItem from './news-item'
 
@@ -20,13 +19,12 @@ class NewsList extends Component {
     let { items } = this.props
     items = items.filter((item, i) => i <= 3)
     const renderNewsItems = items.map((item) => {
-      let { id, title, description, content, tag, publishedAt, url, urlToImage, author } = item
+      let { id, title, description, content, publishedAt, url, urlToImage, author } = item
       return (
         <NewsItem
           key={id}
           id={id}
           title={title}
-          tag={tag}
           content={content}
           url={url}
           urlToImage={urlToImage}
@@ -44,20 +42,6 @@ class NewsList extends Component {
       </section>
     )
   }
-  // render() {
-  //   const { isFetching, nextPage, loadMoreHandler } = this.props
-  //   return (
-  //     <InfiniteScroll
-  //       children={this.renderChildren()}
-  //       loadMore={loadMoreHandler}
-  //       loadingMore={isFetching}
-  //       hasMore={Boolean(nextPage)}
-  //       holderType="section"
-  //       className="blog_listing large_img"
-  //       elementIsScrollable={false}
-  //     />
-  //   )
-  // }
 }
 
 NewsList.propTypes = propTypes

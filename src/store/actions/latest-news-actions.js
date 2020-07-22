@@ -24,8 +24,8 @@ export const infiniteLoadingStart = () => ({
 })
 
 export const fetchLatestNews = (page) => async (dispatch, getState) => {
-  const _page = page || getState().articles.nextPage || 1
-  dispatch(fetchLatestNewsRequest(_page))
+  // const _page = page || getState().articles.nextPage || 1
+  // dispatch(fetchLatestNewsRequest(_page))
 
   try {
     const response = await axios(`${API_ROOT}/top-headlines?apiKey=${API_KEY}`, {
@@ -42,5 +42,5 @@ export const fetchLatestNews = (page) => async (dispatch, getState) => {
 export const loadMoreHandler = () => async (dispatch) => {
   dispatch(infiniteLoadingStart())
   await timeoutPromise(2000)
-  return dispatch(fetchLatestNews()) //todo explain why need to return
+  return dispatch(fetchLatestNews())
 }

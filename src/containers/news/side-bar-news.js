@@ -4,17 +4,6 @@ import { Tabs, Tab } from 'react-bootstrap'
 import SideBarTopNewsContainer from '../side-bar-top-news-list'
 import SideBarFeaturedNewsContainer from '../side-bar-featured-news-list'
 
-// class ArticleListContainer extends React.Component {
-//   componentDidMount() {
-//     console.log(this.props.category)
-//     this.props.fetchArticles(this.props.category)
-//   }
-
-//   render() {
-//     return <ArticleList {...this.props} />
-//   }
-// }
-
 const SideBarNews = (props) => {
   return (
     <Tabs defaultActiveKey="top" id="uncontrolled-tab-example">

@@ -43,5 +43,5 @@ export const fetchSideBarFeaturedNews = (category) => async (dispatch, getState)
 export const loadMoreHandler = () => async (dispatch) => {
   dispatch(infiniteLoadingStart())
   await timeoutPromise(2000)
-  return dispatch(fetchSideBarFeaturedNews()) //todo explain why need to return
+  return dispatch(fetchSideBarFeaturedNews())
 }

@@ -40,9 +40,9 @@ const HeaderNav = ({ items, handleChange }) => {
             <form class="ml-auto">
               <div class="search">
                 <Form.Control type="text" placeholder="Search" onChange={handleChange} />
-                <a class="btn btn-search">
+                <Link class="btn btn-search">
                   <i class="fa fa-search"></i>
-                </a>
+                </Link>
               </div>
             </form>
           </div>

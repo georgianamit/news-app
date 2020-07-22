@@ -4,17 +4,6 @@ import { connect } from 'react-redux'
 import ArticleList from '../components/articles/article-list'
 import { fetchSearchNews } from '../store/actions/search-news-actions'
 
-// class ArticleListContainer extends React.Component {
-//   componentDidMount() {
-//     console.log(this.props.category)
-//     this.props.fetchArticles(this.props.category)
-//   }
-
-//   render() {
-//     return <ArticleList {...this.props} />
-//   }
-// }
-
 const SearchListContainer = (props) => {
   const { fetchSearchNews, match } = props
   useEffect(() => {

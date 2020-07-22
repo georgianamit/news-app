@@ -4,17 +4,6 @@ import { connect } from 'react-redux'
 import { fetchSideBarFeaturedNews } from '../store/actions/side-bar-featured-news-actions'
 import SideBarNewsList from '../components/side-bar-news/side-bar-news-list'
 
-// class ArticleListContainer extends React.Component {
-//   componentDidMount() {
-//     console.log(this.props.category)
-//     this.props.fetchArticles(this.props.category)
-//   }
-
-//   render() {
-//     return <ArticleList {...this.props} />
-//   }
-// }
-
 const SideBarFeaturedNewsContainer = (props) => {
   const { category, fetchSideBarFeaturedNews } = props
   useEffect(() => {

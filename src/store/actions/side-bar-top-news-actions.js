@@ -26,11 +26,10 @@ export const infiniteLoadingStart = () => ({
 export const fetchSideBarTopNews = (category) => async (dispatch, getState) => {
   // const _page = page || getState().articles.nextPage || 1
   // dispatch(fetchArticlesRequest(_page))
-  console.log(category + 'its there')
   try {
     const response = await axios(`${API_ROOT}/everything?apiKey=${API_KEY}`, {
       params: {
-        sources: 'abc-news, aftenposten',
+        sources: 'abc-news',
         sortBy: 'popularity',
       },
     })
@@ -43,5 +42,5 @@ export const fetchSideBarTopNews = (category) => async (dispatch, getState) => {
 export const loadMoreHandler = () => async (dispatch) => {
   dispatch(infiniteLoadingStart())
   await timeoutPromise(2000)
-  return dispatch(fetchSideBarTopNews()) //todo explain why need to return
+  return dispatch(fetchSideBarTopNews())
 }

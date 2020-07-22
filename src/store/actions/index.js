@@ -1,1 +1,5 @@
 export * from './articles-actions'
+export * from './latest-news-actions'
+export * from './search-news-actions'
+export * from './side-bar-featured-news-actions'
+export * from './side-bar-top-news-actions'

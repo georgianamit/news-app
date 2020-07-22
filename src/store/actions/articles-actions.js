@@ -26,7 +26,6 @@ export const infiniteLoadingStart = () => ({
 export const fetchArticles = (category) => async (dispatch, getState) => {
   // const _page = page || getState().articles.nextPage || 1
   // dispatch(fetchArticlesRequest(_page))
-  console.log(category + 'its there')
   try {
     const response = await axios(`${API_ROOT}/top-headlines?apiKey=${API_KEY}`, {
       params: {
