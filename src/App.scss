@@ -1,6 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
-
 body {
   color: #5a5a5a;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -25,10 +24,11 @@ a:hover,
   background: #fd3a13;
   border-color: #fd3a13;
   color: #fff;
-  padding: 7px 10px;
+  padding: 5px 10px;
 }
 
-.btn-search:hover {
+.btn-search:hover,
+.btn-search:focus {
   background: #ca1b1b;
   border-color: #ca1b1b;
 }

@@ -7,7 +7,7 @@ const BrandHeader = () => (
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <h1>
-              Triveous News<small>Get the latest News</small>
+              Express News<small>Get the latest News</small>
             </h1>
           </div>
         </div>
