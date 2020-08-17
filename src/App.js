@@ -6,7 +6,6 @@ import LatestNews from './containers/news/latest-news'
 import { Provider } from 'react-redux'
 import store from './store'
 import './App.scss'
-import { fetchLatestNews } from './store/actions/latest-news-actions'
 import GeneralNews from './containers/news/general-news'
 import BusinessNews from './containers/news/business-news'
 import EntertainmentNews from './containers/news/entertainment-news'
@@ -18,9 +17,6 @@ import SideBarNews from './containers/news/side-bar-news'
 import SearchNews from './containers/news/search-news'
 
 class App extends Component {
-  componentDidMount() {
-    store.dispatch(fetchLatestNews())
-  }
   render() {
     return (
       <div className="app">
