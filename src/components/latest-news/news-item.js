@@ -29,7 +29,7 @@ const NewsItem = ({ id, title, description, content, url, urlToImage, publishedA
         </div>
         <p class="card-text">
           <small class="text-time">
-            <em>{publishedAt}</em>
+            <em>{new Date(publishedAt).toDateString()}</em>
           </small>
         </p>
       </div>
